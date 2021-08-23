@@ -1,0 +1,36 @@
+LEFT VIEW OF THE BINARY TREE.
+
+
+
+void left_view(node *root)
+{
+	queue<int>Q;
+	Q.push(NULL);
+	Q.push(root);
+	Q.push(NULL);
+
+	node *temp;
+	bool flag = false;
+	while(!Q.empty())
+	{
+		temp = Q.front();
+		Q.pop();
+
+		if(temp == null)
+			flag = true;
+		else
+		{
+			if(flag)
+			{
+				cout<<temp->data<<" ";
+				flag = false;
+			}
+
+			if(temp->left)
+				Q.push(temp->left);
+
+			if(temp->right)
+				Q.push(temp->right);
+		}
+	}
+}

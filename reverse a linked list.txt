@@ -1,0 +1,20 @@
+function to reverse a linked list.
+
+
+node* reverseLL(node* head)
+{
+	node* curr = head;
+	node* nn = head;
+	node* prev = nullptr;
+
+	while(curr != nullptr)
+	{
+		nn = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = nn;
+	}
+
+	head = prev;
+	return head;
+}
